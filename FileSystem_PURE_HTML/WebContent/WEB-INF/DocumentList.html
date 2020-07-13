@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" media="all" href="../css/style.css" th:href="@{css/style.css}" />
+<title>DocumentList</title>
+</head>
+<body>
+	
+	<div id="header">
+		<a th:href="@{/Home}" class="w3-xxxlarge" id="icon">
+			<i class="fa fa-home"></i>
+		</a>
+		<span >
+			Documents list for subfolder "<span th:text="${ subfolder.name }">MySubfolder</span>"
+		</span>
+	</div>
+	
+	<div class="container" th:each="doc : ${ documents }" id = "doc">
+	  <div class="row">
+	    <div class="col-md-6" id="elems">
+	    	<h6><b><span th:text="${ doc.name }">
+	    		Document name
+	    	</span></b></h6>
+	    </div>
+	    <div class="col-md-3" id="elems">
+	      	<a th:href="@{/AccessDocument(documentid=${doc.id})}">
+	      		 <button class="btn access"> Access </button>
+	      	</a>
+	    </div>
+	    <div class="col-md-3" id="elems">
+	      	<a th:href="@{/SelectDocument(documentid=${doc.id})}">
+	      		<button class="btn move"> Move </button>
+	      	</a>	
+	    </div>
+	   </div>
+	</div>
+	
+</body>
+</html>

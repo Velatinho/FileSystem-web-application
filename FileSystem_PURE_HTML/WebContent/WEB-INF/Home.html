@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" />
+<link rel="stylesheet" type="text/css" media="all" href="../css/style.css" th:href="@{/css/style.css}" />
+<title>Home</title>
+</head>
+<body>
+
+	<div id="header">
+		<a th:href="@{/Home}" class="w3-xxxlarge" id="icon">
+			<i class="fa fa-home"></i>
+		</a>
+		<span >
+			 Welcome to Exam PURE_HTML Homepage
+		</span>
+	</div>
+	
+	
+	<!-- NORMAL HOME PAGE CASE -->
+	<div th:if="${document == null}"  class="tree" >
+		<ul th:each="fol : ${ folders }">
+			<li th:text="${ fol.name }"> directory_name </li>	
+			
+				<ul th:each="sub : ${ subfolders }">
+					<li th:if="${ sub.parentid } == ${ fol.id }">
+						<a 	th:text="${ sub.name }"
+							th:href="@{/DocumentList(subfolderid=${sub.id})}">
+							subdirectory_name	</a></li>
+				</ul>
+
+		</ul>
+	</div>
+	
+	
+	<!-- when document is not null, a document is being moved -->
+	<div th:if="${document != null}" class="moving">
+		<div>You are moving document "<span th:text="${document.name}">X
+										</span>" from subfolder "<span th:text="${starting_sub.name}">Y
+																</span>".</div>
+		<div>Please select a destination subfolder.</div>
+	</div>
+	
+	
+	<!-- HOME PAGE FOR MOVING A DOCUMENT -->
+	<div th:if="${document != null}"  class="tree" >
+		<ul th:each="fol : ${ folders }">
+			<li th:text="${ fol.name }"> directory_name  </li> <!-- old </li> -->
+			
+				<ul th:each="sub : ${ subfolders }">
+					<li th:if="${ sub.parentid } == ${ fol.id }">
+						<span th:if="${sub.id} != ${document.parentid}">
+							<form th:action="@{/MoveDocument}" th:method="POST">
+								<input type="hidden" name="newsubfolderid" th:value="${sub.id}">
+								<input type="hidden" name="documentid" th:value="${document.id}">
+								<button th:text="${ sub.name }" type="submit" id="destinationfol">
+								subdirectory_name	</button>
+							</form>
+						</span>
+					
+						<span th:if="${sub.id} == ${document.parentid}">
+						<button th:text="${ sub.name }" id="sourcefol">
+							subdirectory_name	</button></span>
+					
+					</li>
+				</ul>
+			
+		</ul>
+	</div>
+		   
+</body>
+</html>
+
+

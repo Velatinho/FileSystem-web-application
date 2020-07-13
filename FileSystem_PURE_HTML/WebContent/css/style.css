@@ -1,0 +1,77 @@
+.tree{
+	padding: 10px 50px;
+}
+
+#doc {
+  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ 	padding: 10px 16px;
+ 	background-color:  #e7e7e7;
+ 	width:50%;
+   	margin: 20px;
+ 	margin-left: 70px;
+}
+
+#icon {
+	margin-left: 3%;
+	color: #009933;
+	margin-right: 2%;
+}
+#icon:hover{color: #006622;}
+
+#header {
+	text-align: left;
+    margin: 20px;
+    margin-left: 3%;
+    font-family: 'Krona One', sans-serif;
+    font-size: 15px;
+}
+
+#elems {
+	margin: auto;
+    text-align: left;
+}
+
+
+.moving {
+	margin: 3%;
+	margin-left: 70px;
+	text-align: left;
+}
+
+#destinationfol {
+	border: none;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}
+#destinationfol:hover {
+	background: rgb(128, 219, 143);
+}
+
+#sourcefol {
+	border: none;
+	color: black;
+	background-color:rgba(201, 76, 76, 0.3);
+	cursor: not-allowed;
+}
+#sourcefol:focus{
+	outline: none;
+}
+
+.btn {
+  	border: none; /* Remove borders */
+  	color: white; /* Add a text color */
+  	padding: 12px 22px; /* Add some padding */
+  	cursor: pointer; /* Add a pointer cursor on mouse-over */
+  	margin-top: 5%;
+  	margin-bottom: 5%;
+}
+.access {background-color: #2196F3;} /* Blue */
+.access:hover {background: #0b7dda;}
+
+.move {background-color: #ff9800;} /* Orange */
+.move:hover {background: #e68a00;}
+
+
+
+
