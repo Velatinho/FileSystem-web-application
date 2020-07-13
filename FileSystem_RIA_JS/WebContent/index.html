@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN/SIGNUP Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="loginManagement.js" charset="utf-8" defer></script>
+
+
+</head>
+<body>
+	<div class="container">
+		<br><br>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="header" style="text-align: center">
+					<span> Welcome to FileSystem RIA Homepage </span>
+				</div>
+			</div>
+		</div>
+		<br><br>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div id="subheader">
+					LOGIN FORM
+				</div>
+				<form action="#">
+					<fieldset id = "login">
+						<div class = "field"> Username: <input type="text" name="username" required placeholder="admin"> </div>
+						<div class = "field"> Password: <input type="password" name="pwd" required placeholder="admin"></div>
+						<input class="btn login" id="loginbutton" type="button" value="LOGIN">
+						<b><span id="errormessage" style="text-align:center"></span></b>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-5">
+				<div id="subheader">
+					SIGNUP FORM
+				</div>
+				<form action="#">
+					<fieldset id = "signup">
+						<div class = "field"> Username: <input type="text" name="username" required placeholder="user"> </div>
+						<div class = "field"> Email: <input type="email" name="email" required placeholder="email@address.com"> </div>
+						<div class = "field"> Password: <input type="password" name="pwd" id="checkpwd" required placeholder="pwd"></div>
+						<div class = "field"> Repeat password: <input type="password" name="reppwd" id="checkreppwd" required placeholder="pwd"></div>
+						<input class="btn login" id="signupbutton" type="button" value="SIGNUP">
+						<b><span id="errormessage2" style="text-align:center"></span></b>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

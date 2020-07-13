@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="css/style.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"
+	rel="stylesheet">
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="filesystemManagement.js" charset="utf-8" defer></script>
+<title>Home</title>
+</head>
+<body>
+
+	<div class="container">
+		<br><br>
+		<div class="row">
+			<div class="col-md-9">
+				<p id="header">
+					You are logged in as user: <span id="id_username"></span>
+				</p>
+			</div>
+			<div class="col-md-3" style="text-align: right">
+				<a href="Logout" draggable="false">
+					<button class="btn logout">LOGOUT</button>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="id_alert"></div>
+			</div>
+		</div>
+		<br><br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div id="id_foldercontainer" class="list">
+				
+				</div>
+			</div>
+			<div class="col-md-2">
+				<img class="trash_dropzone" draggable="false" src="https://icon-library.net//images/trash-can-icon/trash-can-icon-7.jpg" width="100"/>
+				<br>
+				<p id="modal"></p>
+			</div>
+			<div class="col-md-5" id="id_detailscontainer">
+				<div id="doc">
+					<div id = "elems">
+			         	<h4><b><span id="id_documentname"></span></b></h4>
+			           	<div><b>Creation date: </b><span id="id_documentdate"></span></div>
+			           	<p><b>Summary: </b><span id="id_documentsummary"></span></p>
+			           	<p><b>Type: </b><span id="id_documenttype"></span></p>
+		           	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
+
+

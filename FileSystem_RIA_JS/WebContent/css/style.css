@@ -1,0 +1,124 @@
+.field {
+	margin-top: 15px;
+}
+
+input {
+	width: 100%;
+}
+
+input:focus {
+	border: 2px solid #555;
+}
+
+.trash_dropzone {
+	background: white;
+	margin-left: 10%;
+}
+
+.dropzone {
+	margin-left: 10%;
+}
+
+.content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+	background-color: inherit;
+}
+
+#modal {
+	font-weight: bold;
+	color: #0000e6;
+	text-align: left;
+}
+
+#level2 {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#id_username {
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+
+#doc {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 16px;
+	background-color: #e7e7e7;
+	width: 100%;
+}
+
+#list {
+	text-align: left;
+	margin-left: 10%;
+	margin-bottom: 5%;
+}
+
+#header {
+	text-align: left;
+	margin: 15px;
+	font-family: 'Krona One', sans-serif;
+	font-size: 16px;
+}
+
+#subheader {
+	text-align: center;
+	margin: 10px;
+	font-family: 'Krona One', sans-serif;
+	font-size: 15px;
+}
+
+#elems {
+	margin: auto;
+	text-align: left;
+}
+
+.btn {
+	border: none; /* remove borders */
+	color: white; /* Add a text color */
+	padding: 12px 22px; /* Add some padding */
+	cursor: pointer; /* Add a pointer cursor on mouse-over */
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#id_alert {
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
+a {
+	text-decoration: none;
+}
+
+.access {
+	background-color: #2196F3;
+	text-align: left;
+} /* Blue */
+.access:hover {
+	background: #0b7dda;
+}
+
+.move {
+	background-color: #ff9800;
+} /* Orange */
+.move:hover {
+	background: #e68a00;
+}
+
+.login {
+	background-color: #00cc00;
+} /* Green */
+.login:hover {
+	background: #009900;
+}
+
+.logout {
+	background-color: #fb5841;
+} /* Red */
+.logout:hover {
+	background: #c95643;
+}
