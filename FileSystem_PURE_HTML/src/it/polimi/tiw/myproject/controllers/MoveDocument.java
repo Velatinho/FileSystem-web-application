@@ -3,8 +3,6 @@ package it.polimi.tiw.myproject.controllers;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,14 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
-import it.polimi.tiw.myproject.beans.Document;
-import it.polimi.tiw.myproject.beans.Subfolder;
 import it.polimi.tiw.myproject.dao.DocumentDAO;
-import it.polimi.tiw.myproject.dao.SubfolderDAO;
 import it.polimi.tiw.myproject.utils.ConnectionHandler;
 
 @WebServlet("/MoveDocument")
@@ -48,13 +42,6 @@ public class MoveDocument extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		/*
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			String path = getServletContext().getContextPath();
-			response.sendRedirect(path);
-		}*/
-
 		
 		String idD = request.getParameter("documentid");
 		String idS = request.getParameter("newsubfolderid");
@@ -68,22 +55,14 @@ public class MoveDocument extends HttpServlet {
 			} catch (NumberFormatException e) {
 				response.sendError(505, "Bad number format");
 			}
+			//need to check the paramenters .......
 			DocumentDAO documentDAO = new DocumentDAO(connection);
-			List<Document> documents = new ArrayList<Document>();
-			SubfolderDAO subfolderDAO = new SubfolderDAO(connection);
-			Subfolder subfolder = new Subfolder();
 			try {
 				// Update DB
 				documentDAO.moveDocument(docID, subID);		
-				documents = documentDAO.findAllDocumentsByParentID(subID);
-				subfolder = subfolderDAO.findSubfolderByID(subID);
 				// Redirect to the Document list page
-				String path = "/WEB-INF/DocumentList.html";
-				ServletContext servletContext = getServletContext();
-				final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-				ctx.setVariable("documents", documents);
-				ctx.setVariable("subfolder", subfolder);
-				templateEngine.process(path, ctx, response.getWriter());
+				String path = getServletContext().getContextPath() + "/DocumentList?subfolderid=" + subID;
+				response.sendRedirect(path);
 			} catch (SQLException e) {
 				response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database access failed!");
 			}
